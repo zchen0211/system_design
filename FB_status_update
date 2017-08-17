@@ -1,0 +1,13 @@
+Status Update:
+write status (I'm happy), support search status with and / or (search weather and car, "weather is bad, I will take a car" returned; "weather or car" return 1. "weather is good" and "car is broken".
+
+Analysis: database type? how to search? QPS?
+How to scale, sharding, how to build index
+
+#####
+
+Index: inverted index
+
+Database: Bigtable, or Nosql
+
+后面的一些问题，如何scale，如何sharding，就是把Nosql的设计的方式，回答即可。这题的思路应该就是 inverted index + nosql的设计移花接木过来即可。
