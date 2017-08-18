@@ -1,0 +1,29 @@
+http://highscalability.com/plentyoffish-architecture
+### Dating Site for Conversations
+1-Man Company Worth $1 Billion
+CEO: Markus Frind
+
+# PlentyOfFish Update - 6 Billion Pageviews And 32 Billion Images A Month
+
+# POF now has 200 million images and serves 10,000 images served per second.
+
+# by Facebook standards Read/WriteWeb says POF is worth a cool one billion dollars.
+
+45 million visitors
+30+ million hits / day
+$6 million a year from Google Ads
+
+The Platform
+
+Microsoft Windows
+ASP.NET
+IIS
+Akamai CDN
+Foundry ServerIron Load Balancer
+
+# 2 load balanced web servers with 2 Quad Core Intel Xeon X5355 @ 2.66Ghz), 8 Gigs of RAM (using about 800 MBs), 2 hard drives, runs Windows x64 Server 2003.
+# 3 DB servers. No data on their configuration.
+# Approaching 64,000 simultaneous connections and 2 million page views per hour.
+# Internet connection is a 1Gbps line of which 200Mbps is used.
+# 1 TB/day serving 171 million images through Akamai.
+

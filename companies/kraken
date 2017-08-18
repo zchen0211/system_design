@@ -1,0 +1,39 @@
+# http://highscalability.com/blog/2016/6/15/the-image-optimization-technology-that-serves-millions-of-re.html
+Kraken.io
+ >> software is written in Nodejs
+ >> front-end: php
+
+# Hardware
+ >> Cloud is never an option
+ >> All single-socket machines (API, Web, Load Balancers, Webhook Delivery) are currently running Xeon E3-1280 v5 (Skylake)
+ >> Platform: both CPU and I/O intensive
+ >> Every new machine we install is managed and configured by Foreman. (https://theforeman.org/)
+ >> We keep all the configuration in Puppet so bringing a new machine to production-ready state only takes a couple of clicks.
+ >> Software deployment is done through Capistrano
+
+# Data Store
+ >> We use MongoDB in a Replica setup on three independent machines as our primary data store.
+ >> As our dataset is relatively small and we use capped collections for all time series data 
+ >> DB sharding was something we never really have considered.
+
+ >> The second data store is Redis in a Sentinel setup (for the same reasons as the above). 
+ >> Used primarily as a message broker for the task queue and session management on Kraken.io frontend.
+
+# File Storage
+ >> As we’ve decoupled the roles (API, Web, Processing Cluster and Storage) we’ve found ourselves in the immediate need of a scalable network file system. 
+ >> GlusterFS was easy to setup and it is easy to maintain. (www.gluster.org)
+
+# Load Balancers
+ >> Both external and internal load balancers are Nginx-based with Keepalived on each one of them. 
+ >> We don’t use any HTTP servers on our internal machines.
+ 
+# Networking
+ >> See the graph in the original webpage
+
+# Monitoring And Alerting
+ >> we used Sensu, Graphite and InfluxDB.
+
+# Data Mining
+ >> SaaS
+ >> “Give me optimization results for JPEG files below 800 KiB with embedded ICC profile, unique colour count above 10.000, optimized losslessly 3 days ago by user X”.
+ 

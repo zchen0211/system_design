@@ -1,0 +1,30 @@
+# http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html
+
+### How Twitter Handles 3,000 Images Per Second
+# 3,000 (200 GB) images per second.
+# in 2015 Twitter was able to save $6 million
+
+# Doing the simplest thing that can possibly work can really screw you.
+# Decouple (media from tweets)
+# Move handles not blobs.
+# Experiment and research. 20 day TTL (time to live), save 4T per day
+# On demand. Old image variants could be deleted because they could be recreated on the fly rather than precomputed.
+# Progressive JPEG
+
+# Twitter in 2012
+Write
+ >> Problem #1: A Lot of Wasted Network Bandwidth
+ >> Problem #2: Doesn't Scale Well for New Larger Media Sizes
+ >> Problem #3: Inefficient Use of Internal Bandwidth
+ >> Problem #4: Bloated Storage Footprint
+Read
+ >> Problem #5: Impossible to Introduce New Variants
+
+# Twitter in 2016
+Write
+ >> Decoupling media upload from tweeting.
+ >> Segmented resumable uploads.
+Read
+ >> Introduced a CDN Origin Server called MinaBird.
+Client Improvements (Android)
+ 
