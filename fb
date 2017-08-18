@@ -1,0 +1,38 @@
+#####
+## Facebook Live: 
+Live Streams (800k, 45min), 150 engineers
+millions of simulatneous stream
+Released in 4/2015
+ >> HLS first
+ >> RTMP (Real-Time Messaging Protocol), a TCP based protocol
+ >> MPEG-DASH (Dynamic Adaptive Streaming over HTTP).
+ # traffic is spiky
+ # thunder herd problem
+ >> Caching Problem: Video is segmented into one second files
+ >> Global Load Balancing Problem: points of presence (PoPs)
+# System:
+ A broadcaster starts a live video on their phone.
+ The phone sends a RTMP stream to a Live Stream server.
+ The Live Stream server decodes the video and transcodes to multiple bit rates.
+ For each bit rate a set of one-second MPEG-DASH segments is continuously produced.
+ Segments are stored in a datacenter cache.
+ From the datacenter cache segments are sent to caches located in the points of presence (a PoP cache).
+ On the view side the viewer receives a Live Story.
+ The player on their device starts fetching segments from a PoP cache at a rate of one per second.
+# Scale:
+ Within the PoP there are two layers: a layer of HTTP proxies and a layer of cache.
+ Viewers request the segment from a HTTP proxy. The proxy checks if the segment is in cache. If it’s in cache the segment is returned. If it’s not in cache a request for the segment is sent to the datacenter.
+ Different segments are stored in different caches so that helps with load balancing across different caching hosts.
+# Thundering Herd (What happens when all the viewers are requesting the same segment at the same time?)
+ All the viewers are sent to one cache host to wait for the segment, which could overload the host.
+ The proxy adds a caching layer. Only the first request to the proxy actually makes a request to the cache. All the following requests are served directly from the proxy.
+
+## Status Update:
+write status (I'm happy), support search status with and / or (search weather and car, "weather is bad, I will take a car" returned; "weather or car" return 1. "weather is good" and "car is broken".
+Analysis: database type? how to search? QPS?
+How to scale, sharding, how to build index
+
+# Index: inverted index
+Database: Bigtable, or Nosql
+# How to scale? How to do sharding?
+Follow NoSQL
