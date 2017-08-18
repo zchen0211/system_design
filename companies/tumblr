@@ -1,0 +1,73 @@
+# http://highscalability.com/blog/2012/2/13/tumblr-architecture-15-billion-page-views-a-month-and-harder.html
+# microblogging and social networking website
+# founded by David Karp in 2007, owned by Oath Inc.
+
+### Tumblr Architecture - 15 Billion Page Views A Month And Harder To Scale Than Twitter
+
+# stat:
+ 30% growth a month
+ 500 million views a day
+ peak rate 40k requests per second
+ 3TB of new data to store a day
+ running on 1000+ servers
+
+# Software
+ OS X for development, Linux (CentOS, Scientific) in production
+ Apache
+ PHP, Scala, Ruby
+ Redis, HBase, MySQL
+ Varnish, HA-Proxy, nginx,
+ Memcache, Gearman, Kafka, Kestrel, Finagle
+ Thrift, HTTP
+ Func - a secure, scriptable remote control framework and API
+ Git, Capistrano, Puppet, Jenkins
+
+# Hardware
+ 500 web servers
+ 200 database servers (many of these are part of a spare pool we pulled from for failures)
+  47 pools, 30 shards
+ 30 memcache servers
+ 22 redis servers
+ 15 varnish servers
+ 25 haproxy nodes
+ 8 nginx
+ 14 job queue servers (kestrel + gearman)
+
+# Architecture
+
+# Old Tumblr
+ >> LAMP progression
+ >> php
+ >> web server + database server + php application
+ >> scale: memcached, MySQL sharding
+ >> C backend for service, Redis to power Dashboard notifications
+
+# New Tumblr
+ >> JVM
+ >> Move everything out of php app into services
+ >> Scala and Finagle
+ >> Internal services: C/libevent -> Scala/Finagle
+ >> HBase and Redis non-relational, 
+
+# Internal Firehose
+
+# Cell Design For Dashboard Inbox
+ >> 
+
+# On Being A Startup In New York
+
+# Team Structure
+Teams: infrastructure, platform, SRE, product, web ops, services.
+Infrastructure: Layer 5 and below. IP address and below, DNS, hardware provisioning.
+Platform: core app development, SQL sharding, services, web operations.
+SRE: sits between service team and web ops team. Focused on more immediate needs in terms of reliability and scalability.
+Service team: focuses on things that are slightly more strategic, that are a month or two months out.
+Web ops: responsible for problem detection and response, and tuning.
+
+# Software Deployment
+
+# Development
+
+# Hiring Process
+
+

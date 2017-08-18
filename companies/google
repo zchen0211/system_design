@@ -1,0 +1,73 @@
+# http://highscalability.com/google-architecture
+### Google Architecture
+ >> Sorting 1 PB with MapReduce.
+ >> MapReduce: simplified data processing on large clusters
+
+# Platform
+  Linux
+  A large diversity of languages: Python, Java, C++
+
+# The Stack
+1. Products: search, advertising, email, maps, video, chat, blogger
+2. Distributed Systems Infrastructure: GFS, MapReduce, and BigTable.
+3. Computing Platforms: a bunch of machines in a bunch of different data centers
+
+Make sure easy for folks in the company to deploy at a low cost.
+
+Look at price performance data on a per application basis. Spend more money on hardware to not lose log data, but spend less on other types of data. Having said that, they don't lose data.
+
+# Reliable Storage Mechanism With GFS (Google File System)
+ 1. reliable scalable
+ 2. GFS: distributed
+ 3. high reliability across data centers, scalable to thousands of network nodes, huge read/write bandwidth, support large blocks, efficient distribution of operations across nodes to reduce bottlenecks
+ 4. master & chunk servers: master (meta), data 64MB chunks
+   replication (3 different chunk servers)
+
+# Do Something With The Data Using MapReduce
+ 1. MapReduce
+ 2. K/V pair
+ 3. Why
+ 4. 3 different types servers: Master, Map, Reduce
+ 5. GFS -> Map -> Shuffle -> Reduction -> Store back to GFS
+ 6. Indexing pipeline: 20 different map reductions
+ 7. Programs can be very small
+ 8. One problem is stragglers.
+ 9. Data transferred between map and reduce servers is compressed. Servers aren't CPU bound.
+
+# Storing Structured Data In BigTable
+ 1. Large-scale, fault tolerant
+ 2. A distributed hash built on top of GFS. Doesn't support joins or SQL type queries
+ 3. Support lookup by key
+ 4. Commercial databaes don't scale to this level. don't work across 1000s machines.
+ 5. More control.
+ 6. Machines can be added and deleted while system is running
+ 7. Each data item is stored in a cell. Access by row key, column key, or timestamp.
+ 8. Each row is stored in one or more tablets. A tablet is a sequence of 64KB blocks in a data format called SSTable.
+ 9. Three different types of servers: Master (locate tablets), tablet servers (read/write), lock server
+ 10. locality group for locality of reference
+ 11. Tablets are cached in RAM as much as possible.
+
+# Hardware
+ 1. power efficient
+ 2. ultra cheap commodity hardware
+ 3. build reliability on top of unreliability
+ 4. Linux, in-house rack design, PC class mother boards, low end storage
+ 5. Price per wattage
+ 6. a mix of collocation and data centers
+
+# Future Directions
+ 1. geo-distributed clusters
+ 2. single global namespace for all data
+ 3. more and better migration of data and computation
+ 4. solve consistency issue
+
+# Lessons Learned
+ 1. Infrastructure can be a competitive advantage. 
+ 2. Spanning multiple data centers is still an unsolved problem.
+ 3. Take a look at Hadoop 
+ 4. An under appreciated advantage
+ 5. Synergy isn't always crap
+ 6. Build self-managing systems that work without having to take the system down.
+ 7. Create a Darwinian infrastructure.
+ 8. Don't ignore the Academy.
+ 9. Consider compression.
