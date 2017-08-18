@@ -1,3 +1,23 @@
 # http://highscalability.com/blog/2013/9/23/salesforce-architecture-how-they-handle-13-billion-transacti.html
 
+NYSE: CRM (Customer Relationship Management)
+# Instance - a complete set of systems, network and storage infrastructure, both shared and non-shared
+# Superpod - a set of systems, network and storage infrastructure, including outbound proxy servers, load balancers, mail servers, SAN fabric and other infrastructure supporting multiple instances
 
+ >> Instance - a complete set of systems, network and storage infrastructure, both shared and non-shared, that provides the salesforce.com service to a subset of our customers.
+ >> Superpod - a set of systems, network and storage infrastructure, including outbound proxy servers, load balancers, mail servers, SAN fabric and other infrastructure supporting multiple instances. 
+ >> Org (a.k.a., organization) - a single customer of the Salesforce application. 
+ >> Sandbox - an instance of the salesforce.com service that hosts full copies of production orgs for customer application development purposes.
+
+# Stats
+
+# Core App
+
+# Database
+
+# Search
+
+# Fileforce
+ Fileforce, was developed internally to reduce the load on our DB tier.
+
+# Support

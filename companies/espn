@@ -1,0 +1,70 @@
+# http://highscalability.com/blog/2013/11/4/espns-architecture-at-scale-operating-at-100000-duh-nuh-nuhs.html
+
+### ESPN's Architecture At Scale - Operating At 100,000 Duh Nuh Nuhs Per Second
+# ESPN.com peaks at 100,000 requests per second. 
+
+Unlike most every profile on HighScalability ESPN has an enterprise heritage. It’s a Java Enterprise stack, so you’ll see Oracle databases, JMS brokers, Java Beans, and Hibernate.
+
+ >> Platform changes everything.
+ >> Web scale changes everything.
+ >> Personalization changes everything.
+ >> Mobile changes everything.
+ >> Partnerships are power
+
+# Stack
+Java based.
+Oracle database,
+AQ Streams
+Message Broker
+WebSphere MQ
+Interesting integration of people on the ground as sources of data as well as automated feeds
+JMS Broker
+Microsoft SQL Server
+Hibernate
+Ehcache
+IIS
+IBM eXtreme Scale
+Mashery
+F5 Load Balancer
+
+# Architecture
+Client - Internet - Load Balancer Tier - Page / Frag Caching Tier - (NFL or MLB or ...) Web App Cluster - (NFL or MLB or ...) DB
+
+# Architecture Is Organized Around Applications And Databases
+
+# Where Do Stats Come From? (Data Ingest)
+
+# Application Services
+
+# Application Level Caching 
+
+# Page Cache Framework 
+ High performance page and fragment caching.
+ TTL caching exclusively
+ Highest accuracy is a low TTL and block until it returns with data. Slowest access. Used for scoreboard data, for example.
+ Lowest accuracy is a high TTL that doesn’t block, it returns dirty data. Fastest access, used for data not updated frequently. Use for schedule data, for example.
+
+# Content Management System
+ Two subsystems: CMS and DCS (dynamic content system).
+ CMS: editorial staff
+ DCS: SQL Server, denormalized and stored as a blob type
+
+# Live Scores (ESPN.Com)
+ Most content doesn’t update that quickly.
+ A very high end server does nothing but manage connections to the front end flash connector.
+
+# Personalization 
+ Quite different than the rest of ESPN.com and has a lot of specific requirements.
+ Difficult to cache because it’s 1-1 instead
+ Have a lot personalization data. Over 500GB. Doesn’t fit into a single JVM or a database
+ Built a data grid using IBM eXtreme Scale.
+ >> It’s a distributed in-memory hash map. Bought 7 servers with 96GB of RAM each. Software automatically balances and partitions data to JVMs.
+ >> eXtreme Scale was harder to setup than Coherence, but cheaper and they got more support from IBM than Oracl >> eXtreme Scale was harder to setup than Coherence, but cheaper and they got more support from IBM than Oracle
+
+# Fantasy Games 
+
+# APIs
+
+# Special Effects
+ ESPN Emerging Technology’s use of  NVIDIA'S GPU Solutions for High Resolution Imagery.
+
