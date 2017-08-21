@@ -16,6 +16,13 @@ As summarized in http://blog.baozitraining.org/2014/09/how-to-prepare-system-des
 # Data storage layer
  >> Keep track of the hash
 
+# Scaling
+Scaling is growing an infrastructure (compute, storage, networking) larger so that the applications riding on that infrastructure can serve more people at a time.
+# Scale Up
+Scaling up is taking what you’ve got, and replacing it with something more powerful.
+# Scale Out
+Scaling out takes the infrastructure you’ve got, and replicates it to work in parallel.  
+
 # Scaling your abstract design
  >> vertical scaling: the ability to increase the capacity of existing hardware/software (more CPU, RAM), MySQL, Amazon RDS (cloud version of MySQL)
  >> horizontal scaling: the ability to connect multiple entities (more machines in pool), Cassandra, MongoDB, 

@@ -1,2 +1,119 @@
 # http://highscalability.com/blog/2009/8/5/stack-overflow-architecture.html
 ### Stack Overflow Architecture
+
+Written by Jeff Atwood and Joel Spolsky
+
+NoSQL database
+
+# Stats
+16 m views / month
+3 m unique visitors / month
+6 m visits a month
+86% from Google
+9 m active programmers, 30% used
+Cheaper licensing was attained through Microsoft's BizSpark program. My impression is they pay about $11K for OS and SQL licensing.
+Monitization strategy: unobtrusive adds, job placement ads, DevDays conferences, extend the software to target other related niches (Server Fault, Super User), develop StackExchange as a white label and self hosted version of Stack Overflow, and perhaps develop some sort of programmer rating system.
+
+# Platform
+Microsoft ASP.NET MVC
+SQL Server 2008
+C#
+Visual Studio 2008 Team Suite
+JQuery
+LINQ to SQL
+Subversion
+Beyond Compare 3
+VisualSVN 1.5
+Web Tier
+- 2 x Lenovo ThinkServer RS110 1U 
+- 4 cores, 2.83 Ghz, 12 MB L2 cache	
+- 500 GB datacenter hard drives, mirrored
+- 8 GB RAM
+- 500 GB RAID 1 mirror array
+Database Tier
+- 1 x Lenovo ThinkServer RD120 2U 
+- 8 cores, 2.5 Ghz, 24 MB L2 cache
+- 48 GB RAM
+A fourth server was added to run superuser.com. All together the servers also run Stack Overflow, Server Fault, and Super User.
+QNAP TS-409U NAS for backups. Decided not to use a cloud solution because the bandwidth costs of transferring 5 GB of data per day becomes prohibitive.
+Hosting at http://www.peakinternet.com/. Impressed with their detailed technical responses and reasonable hosting rates.
+SQL Server's full text search is used extensively for the site search and detecting if a question has already been asked. Lucene.net is considered an attractive alternative.
+
+# NoSQL
+There are no aggregate operators. 
+You must maintain secondary indexes. 
+There's no searching. 
+There are no distributed queries across partitions. 
+There's no Group By or Order By. 
+There are no cursors for easy paging through result sets. 
+Returning even 100 large records at time may timeout. 
+There may be quotas that are very restrictive because they must limit the amount of IO for any one operation. Query languages may lack expressive power.
+
+# The Multitenancy Problem
+
+# http://highscalability.com/blog/2011/3/3/stack-overflow-architecture-update-now-at-95-million-page-vi.html
+Just More. More users, more page views, more datacenters, more sites, more developers, more operating systems, more databases, more machines. Just a lot more of more.
+
+Linux. Stack Overflow was known for their Windows stack, now they are using a lot more Linux machines for HAProxy, Redis, Bacula, Nagios, logs, and routers. All support functions seem to be handled by Linux, which has required the development of parallel release processes. 
+
+Fault Tolerance. Stack Overflow is now being served by two different switches on two different internet connections, they've added redundant machines, and some functions have moved to a second datacenter.
+
+NoSQL. Redis is now used as a caching layer for the entire network. There wasn't a separate caching tier before so this a big change, as is using a NoSQL database on Linux.
+
+# The Stats
+
+95 Million Page Views a Month
+800 HTTP requests a second
+180 DNS requests a second
+55 Megabits per second
+16 Million Users  - Traffic to Stack Overflow grew 131% in 2010, to 16.6 million global monthly uniques. 
+
+# Data Centers
+1 Rack with Peak Internet in OR (Hosts our chat and Data Explorer)
+2 Racks with Peer 1 in NY (Hosts the rest of the Stack Exchange Network)
+
+# Hardware
+10 Dell R610 IIS web servers (3 dedicated to Stack Overflow):
+2 Dell R710 database servers:
+2 Dell R610 HAProxy servers:
+2 Dell R610 Redis servers:
+1 Dell R610 Linux backup server running Bacula:
+1 Dell R610 Linux management server for Nagios and logs:
+2 Dell R610 VMWare ESXi domain controllers:
+2 Linux routers
+5 Dell Power Connect switches
+
+# Dev Tools
+C#: Language
+Visual Studio 2010 Team Suite: IDE
+Microsoft ASP.NET (version 4.0): Framework
+ASP.NET MVC 3: Web Framework
+Razor: View Engine
+jQuery 1.4.2: Browser Framework:
+LINQ to SQL, some raw SQL: Data Access Layer
+Mercurial and Kiln: Source Control
+Beyond Compare 3: Compare Tool
+
+# Software And Technologies Used
+Stack Overflow uses a WISC stack via BizSpark
+Windows Server 2008 R2 x64: Operating System
+SQL Server 2008 R2 running Microsoft Windows Server 2008 Enterprise Edition x64: Database
+Ubuntu Server
+CentOS
+IIS 7.0: Web Server
+HAProxy: for load balancing
+Redis: used as the distributed caching layer.
+CruiseControl.NET: for builds and automated deployment
+Lucene.NET:  for search
+Bacula: for backups
+Nagios: (with n2rrd and drraw plugins) for monitoring
+Splunk: for logs
+SQL Monitor: from Red Gate - for SQL Server monitoring
+Bind: for DNS
+Rovio:  a little robot (a real robot) allowing remote developers to visit the office “virtually.”
+Pingdom:  an external monitor and alert service.
+
+# Developers And System Administrators
+
+14 Developers
+2 System Administrators
