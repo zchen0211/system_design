@@ -36,3 +36,12 @@ How to scale, sharding, how to build index
 Database: Bigtable, or Nosql
 # How to scale? How to do sharding?
 Follow NoSQL
+
+### https://gigaom.com/2011/12/06/facebook-shares-some-secrets-on-making-mysql-scale/
+Facebook shares some secrets on making MySQL scale
+Github: https://github.com/facebook/mysql-5.6
+
+### sharding
+https://engineering.instagram.com/sharding-ids-at-instagram-1cf5a71e5a5c
+Sharding & IDs at Instagram
+http://www.databasesoup.com/2012/04/sharding-postgres-with-instagram.html

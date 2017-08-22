@@ -1,0 +1,11 @@
+# Wikipedia:
+https://en.wikipedia.org/wiki/Load_balancing_(computing)
+
+# Amazon’s service for traffic load balancing
+https://aws.amazon.com/elasticloadbalancing/
+
+# nginx - HTTP load balancer
+http://nginx.org/en/docs/http/load_balancing.html
+
+# HAProxy - TCP/HTTP load balancer
+http://www.haproxy.org/

@@ -49,4 +49,80 @@ Client Improvements (Android)
 # MySQL Isn't Used For Everything:
  >> Cassandra is used for high velocity writes, and lower velocity reads.
  >> Hadoop is used to process unstructured and large datasets, hundreds of billions of rows.
- >> Vertica is being used for analytics and large aggregations and joins so they don't have to write MapReduce jobs.   
+ >> Vertica is being used for analytics and large aggregations and joins so they don't have to write MapReduce jobs.  
+
+
+### https://www.hiredintech.com/classrooms/system-design/lesson/68
+Designing Twitter
+# Asking Questions:
+how many users? 10m user, 100m http requests
+how connected? each user will be following 200 other users on average, outliers with tens of thousands
+new tweets and favor, how many requests? 10 m requests, each twitter favored twice
+
+what is expected?
+10 million tweets per day
+20 million tweet favorites per day
+2 billion "follow" relations
+Some users and tweets could generate an extraordinary amount of traffic
+
+posting new tweets
+following a user
+favoriting a tweet
+displaying data about users and tweets
+
+Relational Database: MySQL?
+Cache in front of data-center (Much slower to read from the disk than from the memory)
+
+# Database Schema
+Table users
+ ID (id)
+ username (username)
+ full name (first_name & last_name)
+ password related fields like hash and salt (password_hash & password_salt)
+ date of creation and last update (created_at & updated_at)
+ description (description)
+ and maybe some other fields...
+
+Table tweets
+ ID (id)
+ content (content)
+ date of creation (created_at)
+ user ID of author (user_id)
+
+These two entities have several types of relations between them:
+ users create tweets
+ users can follow users
+ users favorite tweets
+
+Table connections
+ ID of user that follows (follower_id)
+ ID of user that is followed (followee_id)
+ date of creation (created_at)
+
+Table favorites
+ ID of user that favorited (user_id)
+ ID of favorited tweet (tweet_id)
+ date of creation (created_at)
+
+# Building a RESTful API
+how our front-end would “talk” to the back-end system
+GET /api/users/<username>
+GET /api/users/<username>/tweets
+GET /api/users/<username>/tweets?page=4
+
+GET /api/users/<username>/followers
+GET /api/users/<username>/followees
+
+POST /api/users/<username>/tweets
+POST /api/users/<username>/followers
+
+# Increased number of read requests
+data grows too quickly
+sharding
+
+# Unexpected Traffic
+outliers will generate peaks in the number of requests that our application receives
+
+### http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html
+How Twitter Stores 250 Million Tweets A Day Using MySQL
+https://github.com/twitter/mysql

@@ -1,0 +1,52 @@
+# http://highscalability.com/blog/2011/11/29/datasift-architecture-realtime-datamining-at-120000-tweets-p.html
+# DataSift Architecture: Realtime Datamining At 120,000 Tweets Per Second
+
+# Stats
+936 CPU Cores
+Supports 16,000 Data Streams Per Server 
+Processes Whole Twitter Firehose 250+ million Tweets per day.
+Current Peak Delivery of 120,000 Tweets Per Second (260Mbit bandwidth)
+Performs 250+ million sentiment analysis with sub 100ms latency 
+1TB of augmented (includes gender, sentiment, etc) data transits the platform daily
+Can do data-lookup's on 10,000,000+ username lists in real-time 
+Staff of 30 people
+4 years of development
+
+### Platform 
+# Languages Used
+C++ for the performance-critical components, like the core filtering engine (custom virtual machine)
+PHP for the site, external API server, most of the internal web services, and a custom-built, high performance job queue manager.
+Java/Scala for the communication with HBase, for Map/Reduce jobs and for processing data from Kafka
+Ruby for our Chef recipes
+
+# Data Stores
+MySQL (Percona server) on SSD drives
+HBase cluster (currently, ~30 hadoop nodes, 400TB of storage)
+Memcached (cache)
+Redis (still used for some internal queues, but probably going to be dismissed soon)
+
+# Message Queues
+0mq (custom build from latest alpha branch, with some stability fixes, to use publisher-side filtering), used in different configurations:
+Kafka (LinkedIN's persistent and distributed message queue) for high-performance persistent queues. 
+In both cases they're working with the developers and contributing bug reports / traces / fixes / client libraries.
+
+# CI / Deployments
+
+# Architecture In A Picture
+Points:
+ > Democratization of data access.
+ > Software as a service to data.
+ > You don’t really need big data, you need insight.
+ > create a whole new slew
+ETL (extract, transform, load).
+ > Extract
+ > Transform
+ > Filtering
+
+### Key Ideas
+# Use Cases
+
+# Real-Time Only Has Far Reaching Consequences
+
+
+
