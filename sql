@@ -4,6 +4,18 @@ http://web.stanford.edu/class/cs145/
 # http://blog.jobbole.com/100349/
 A very detailed article
 
+# Commonly techniques
+ > B+ Tree Index: insert / delete (O(logn))
+ > Hash Table:
+
+# Cores:
+ > Process Manager
+ > Network Manager
+ > File System Manager
+ > Memory Manager
+ > Security Manager
+ > Client Manager
+
 # Relational Database
 RDMBS
 
