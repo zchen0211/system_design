@@ -1,3 +1,9 @@
+# A complete tutorial (Stanford Courses)
+http://web.stanford.edu/class/cs145/
+
+# http://blog.jobbole.com/100349/
+A very detailed article
+
 # Relational Database
 RDMBS
 
@@ -31,3 +37,18 @@ NoSQL
  no standarized
  limited lookup ability
  not very direct program
+
+# 
+Entities
+Relationships
+ A data model is a collecaon of concepts for describing data
+ A schema is a descripaon of a paracular collecaon of data, using the given data model
+
+# Transactions:
+ transaction (TXN): reads/writes
+ scheduling concurrent transactions: A set of TXNs is isolated if their effect is as if all were executed serially
+ # Conflicts: 
+   If Ti wants to write to an item x and Tj wants to read x, then Ti, Tj conflict. Solution via locking:
+     only one winner gets the lock
+     loser is blocked (waits) unal winner finishes
+ # Ensuring Atomicity & Durability
