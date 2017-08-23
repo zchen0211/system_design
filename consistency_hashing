@@ -1,0 +1,14 @@
+# http://www.tom-e-white.com/2007/11/consistent-hashing.html
+Consistent hashing and random trees: Distributed caching protocols for relieving hot spots on the World Wide Web
+ACM STOC 1997
+
+used in Amazon Dynamo, memcached, Parameter Server
+
+n machines load balacing:
+hash(O) % n
+
+Clockwise -> Next One
+Duplicate with multiple-object
+
+# Another good article
+http://afghl.github.io/2016/07/04/consistent-hashing.html
