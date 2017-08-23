@@ -6,4 +6,17 @@ Second, keep in mind that system design questions serve as an idea exchange plat
 
 Don't get defensive: whenever your interviewer challenges your architectural choices, acknowledge that rarely an idea is perfect, and outline the advantages and disadvantages of your choice. Be open to new constraints to pop up during the discussion and to adjust your architecture on the fly.
 
+# In an Interview: Communication first
+ >> constraint
+ >> use cases
 
+### interview
+Palantir: HOW TO ACE A SYSTEMS DESIGN INTERVIEW
+http://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/
+Summary of system design problems on jiuzhang:
+http://www.jiuzhang.com/qa/3705/
+
+### interview questions
+jiuzhang:
+http://www.jiuzhang.com/qa/?channel=2
+http://www.jiuzhang.com/qa/3705/

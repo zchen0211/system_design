@@ -9,3 +9,12 @@ http://nginx.org/en/docs/http/load_balancing.html
 
 # HAProxy - TCP/HTTP load balancer
 http://www.haproxy.org/
+
+Pick a worker to forward request
+ random
+ round robin
+ least busy
+ sticky session / cookies
+ by request parameters
+Wait for response
+Forward the response to client

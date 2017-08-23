@@ -15,6 +15,13 @@ Widely used in:
  Digg
  ...
 
+# NoSQL pattern
+ >> MongoDB (Document)
+ >> CouchDB (Document)
+ >> Apache Cassandra (Wide Column Store)
+ >> Redis (K-V), data-structure server
+ >> Relational Database,
+
 # Characteristics:
  Key value store
  Run on large number of commodity machines
