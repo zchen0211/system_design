@@ -1,3 +1,6 @@
+### Good Article
+http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html
+
 # Scaling
 Scaling is growing an infrastructure (compute, storage, networking) larger so that the applications riding on that infrastructure can serve more people at a time.
 # Scale Up
@@ -31,3 +34,9 @@ Scaling out takes the infrastructure you’ve got, and replicates it to work in 
   # A-M Cluster
   # N-Z Cluster
  >> ACID (Atomicity, Consistency, Isolation, Durability)
+
+ >> Pipe and Filter
+  # Known as Data Flow Programming
+  # EAI pattern (Enterprise Integration Patterm)
+ >> Map Reduce
+  #  

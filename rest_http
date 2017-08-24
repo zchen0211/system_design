@@ -14,3 +14,5 @@ query-string: data sent to http server
 Http Server doesn't know two requests come from the same client
 Cookie introduced to solve
 
+# RESTful API
+Representational state transfer

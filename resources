@@ -20,9 +20,6 @@ As summarized in http://blog.baozitraining.org/2014/09/how-to-prepare-system-des
 
 # Denormalization
 
-# RESTful API
-Representational state transfer
-
 ### More professional
 4. http://highscalability.com/blog/2009/8/6/an-unorthodox-approach-to-database-design-the-coming-of-the.html
 Database sharding
@@ -33,10 +30,8 @@ Database sharding
 http://blog.csdn.net/sigh1988/article/details/9790337
 http://blog.csdn.net/v_july_v/article/details/6279498
 9. Concepts:
-Distributed Hash Table
 Eventual Consistency vs Strong Consistency
 Read Heavy vs Write Heavy
-Consistent Hashing
 Sticky Sessions
 
 ### Some knowledge:
