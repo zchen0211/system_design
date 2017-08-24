@@ -1,0 +1,26 @@
+# Caching
+  # .html, MySQL Query Cache, memcached, ...
+  # simple key-value store, reside as a buffering layer between application and data layer
+  # In-memory: Memcached or Redis (never do file-based caching)
+    # Cache the query: next time, check the query first; problem: expiration, modified data
+    # Cache the object: save the instance of the class or the data array;
+
+precalculating results (e.g. the number of visits from each referring domain for the previous day), 
+pre-generating expensive indexes (e.g. suggested stories based on a user's click history), 
+and storing copies of frequently accessed data in a faster backend (e.g. Memcache instead of PostgreSQL).
+
+# Try Consistency Hashing first
+
+# Application Versus Database Caching
+
+# Update
+ LRU
+
+# In Memory Cache:
+ Memcached and Redis
+
+# CDN (Content Distribution Networks)
+ CDNs take the burden of serving static media off of your application servers
+ if not large enough to use CDN, use a subdomain (e.g. static.example.com), Nginx
+
+# Cache invalidation

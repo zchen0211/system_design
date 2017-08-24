@@ -7,9 +7,6 @@ https://aws.amazon.com/elasticloadbalancing/
 # nginx - HTTP load balancer
 http://nginx.org/en/docs/http/load_balancing.html
 
-# HAProxy - TCP/HTTP load balancer
-http://www.haproxy.org/
-
 Pick a worker to forward request
  random
  round robin
@@ -18,3 +15,10 @@ Pick a worker to forward request
  by request parameters
 Wait for response
 Forward the response to client
+
+# Hardware Load Balancers
+ > Citrix NetScaler
+
+# Software LB
+ # HAProxy - TCP/HTTP load balancer
+ http://www.haproxy.org/
