@@ -1,5 +1,18 @@
 ### Good Article
 http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html
+http://www.aosabook.org/en/distsys.html
+
+# Principles of Web Distributed Systems Design
+Availability
+Performance
+Reliability
+Scalability
+Manageability
+Cost
+
+# Services
+Service-Oriented Architecture (SOA)
+Decouple Read and Write
 
 # Scaling
 Scaling is growing an infrastructure (compute, storage, networking) larger so that the applications riding on that infrastructure can serve more people at a time.
@@ -7,6 +20,9 @@ Scaling is growing an infrastructure (compute, storage, networking) larger so th
 Scaling up is taking what you’ve got, and replacing it with something more powerful.
 # Scale Out
 Scaling out takes the infrastructure you’ve got, and replicates it to work in parallel.
+
+# Redundancy
+remove single points of failure
 
 # Scaling your abstract design
  >> vertical scaling: the ability to increase the capacity of existing hardware/software (more CPU, RAM), MySQL, Amazon RDS (cloud version of MySQL)
@@ -16,6 +32,8 @@ Scaling out takes the infrastructure you’ve got, and replicates it to work in 
   # Do the time-consuming work in advance
   # Sudden special request
  >> Caching
+  # Global cache v.s. local cache
+  # Distributed Cache: Consistency Hashing
   # .html, MySQL Query Cache, memcached, ...
   # simple key-value store, reside as a buffering layer between application and data layer
   # In-memory: Memcached or Redis (never do file-based caching)
@@ -23,8 +41,9 @@ Scaling out takes the infrastructure you’ve got, and replicates it to work in 
     # Cache the object: save the instance of the class or the data array;
  >> Load balancing
   # first golden rule for scalability: every server contains exactly the same codebase and does not store any user-related data, like sessions or profile pictures, on local disc or memory
-  # Software LB: ELB, HAProxy, LVS, ...
+  # Software LB: ELB, HAProxy (open-source popular), LVS, ...
   # Hardware LB: Barracuda, Cisco, Citrix, F5, ...
+  # system only has a couple of a nodes: round robin DNS better
  >> Sticky Session:
   # opposite to load balancing, keep something on the same server
  >> Database replication
@@ -35,8 +54,17 @@ Scaling out takes the infrastructure you’ve got, and replicates it to work in 
   # N-Z Cluster
  >> ACID (Atomicity, Consistency, Isolation, Durability)
 
+ >> # Indexes
+  # inverted indexing
+
  >> Pipe and Filter
   # Known as Data Flow Programming
   # EAI pattern (Enterprise Integration Patterm)
  >> Map Reduce
-  #  
+  # 
+ >> Message Queues
+  open sources: RabbitMQ, ActiveMQ, BeanstalkD
+  services: Zookeeper
+  data store: Redis
+ >> Platform Layer
+ add a platform layer, communicate between web server (app) and database 
