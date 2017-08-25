@@ -29,3 +29,6 @@ item: id+2^i, should be looked up in the server (succ)
 # Classic Example: Amazon Dynamo
 
 https://en.wikipedia.org/wiki/Distributed_hash_table
+
+### Bloom Filters
+ Probabilistic: if a lot of independent bit agree, just accept it as true
