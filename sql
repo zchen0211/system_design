@@ -4,6 +4,9 @@ http://web.stanford.edu/class/cs145/
 # http://blog.jobbole.com/100349/
 A very detailed article
 
+# http://snarfed.org/transactions_across_datacenters_io.html
+Transactions Across Datacenters
+
 # Commonly techniques
  > B+ Tree Index: insert / delete (O(logn))
  > Hash Table:
