@@ -27,25 +27,3 @@ Released in 4/2015
  All the viewers are sent to one cache host to wait for the segment, which could overload the host.
  The proxy adds a caching layer. Only the first request to the proxy actually makes a request to the cache. All the following requests are served directly from the proxy.
 
-## Status Update:
-write status (I'm happy), support search status with and / or (search weather and car, "weather is bad, I will take a car" returned; "weather or car" return 1. "weather is good" and "car is broken".
-Analysis: database type? how to search? QPS?
-How to scale, sharding, how to build index
-
-# Index: inverted index
-Database: Bigtable, or Nosql
-# How to scale? How to do sharding?
-Follow NoSQL
-
-### https://gigaom.com/2011/12/06/facebook-shares-some-secrets-on-making-mysql-scale/
-Facebook shares some secrets on making MySQL scale
-Github: https://github.com/facebook/mysql-5.6
-
-### sharding
-https://engineering.instagram.com/sharding-ids-at-instagram-1cf5a71e5a5c
-Sharding & IDs at Instagram
-http://www.databasesoup.com/2012/04/sharding-postgres-with-instagram.html
-
-### https://www.facebook.com/notes/facebook-engineering/scaling-memcached-at-facebook/39391378919/
-Scaling memcached at Facebook
-

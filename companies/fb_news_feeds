@@ -1,0 +1,15 @@
+https://www.bittiger.io/classpage/tAkRctFLtgNuCj5ev
+
+1. Read v.s. Write
+
+2. Pull v.s. Push
+Push: good for -, bad for celebrities
+Pull: good for large number of followers,  bad for 
+
+balance between latency, computation & storage
+
+Facebook:
+news feeds: all pull
+Instagram: all push 
+
+https://www.bittiger.io/videos/8d7E2LPPy2HcZNr7D/TpxCSKrGpiKwuhP32

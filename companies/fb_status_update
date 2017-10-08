@@ -1,0 +1,9 @@
+## Status Update:
+write status (I'm happy), support search status with and / or (search weather and car, "weather is bad, I will take a car" returned; "weather or car" return 1. "weather is good" and "car is broken".
+Analysis: database type? how to search? QPS?
+How to scale, sharding, how to build index
+
+# Index: inverted index
+Database: Bigtable, or Nosql
+# How to scale? How to do sharding?
+Follow NoSQL
