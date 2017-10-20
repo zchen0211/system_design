@@ -1,4 +1,5 @@
-https://www.bittiger.io/classpage/tAkRctFLtgNuCj5ev
+# Bit-Tiger
+# https://www.bittiger.io/classpage/tAkRctFLtgNuCj5ev
 
 1. Read v.s. Write
 
@@ -13,3 +14,34 @@ news feeds: all pull
 Instagram: all push 
 
 https://www.bittiger.io/videos/8d7E2LPPy2HcZNr7D/TpxCSKrGpiKwuhP32
+
+https://www.quora.com/What-are-the-best-practices-for-building-something-like-a-news-feed
+
+https://stackoverflow.com/questions/202198/whats-the-best-manner-of-implementing-a-social-activity-stream
+
+https://stackoverflow.com/questions/1342741/alternatives-to-traditional-relational-databases-for-activity-streams
+
+# 3/29/2016
+# http://blog.gainlo.co/index.php/2016/03/29/design-news-feed-system-part-1-system-design-interview-questions/?utm_campaign=quora&utm_medium=What+are+the+best+practices+for+building+something+like+a+News+Feed%3F&utm_source=quora
+# News Feed System I
+ 1. Data Model:
+   user table: uid, name, password, login, ...
+   friend list (adjacency list): uid_ -> uid1, uid2, ...
+   user feeds table: uid, fid, timestamp, ...
+   feed table: fid, content
+  Will have 3 joins
+  Denormalize data: table 3 + table 4 together, 
+   Adv: 1 fewer join,
+   Disadv: every update should update two tables (consistency problem), redundancy
+ 2. Ranking: (C x P x T x R)
+   Creator (Affinity)
+   Performance (liked / commented by others)
+   Type (photos? links? status?)
+   Recency (Freshness)
+
+# 4/5/2016
+# http://blog.gainlo.co/index.php/2016/04/05/design-news-feed-system-part-2/?utm_campaign=quora&utm_medium=What+are+the+best+practices+for+building+something+like+a+News+Feed%3F&utm_source=quora
+# News Feed System II
+ 1. Feed publishing:
+   Push: Fanout on write
+   Pull: Fanout on read (High-profile users)
