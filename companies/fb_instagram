@@ -1,0 +1,22 @@
+# 12/6/2011
+# http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html
+
+# 4/9/2012
+# http://highscalability.com/blog/2012/4/9/the-instagram-architecture-facebook-bought-for-a-cool-billio.html
+
+# 4/16/2012
+# http://highscalability.com/blog/2012/4/16/instagram-architecture-update-whats-new-with-instagram.html
+
+# 6/7/2012
+# http://highscalability.com/blog/2012/6/7/3-secrets-to-lightning-fast-mobile-design-at-instagram.html
+ Perform actions optimistically: like / comments / follows
+ Preload content adaptively: before it is needed
+
+# 9/29/2014
+# http://highscalability.com/blog/2014/9/29/instagram-improved-their-apps-performance-heres-how.html
+
+# 7/16/2015
+# http://highscalability.com/blog/2015/7/16/this-just-this.html
+
+# 10/21/2015
+# http://highscalability.com/blog/2015/10/21/5-lessons-from-5-years-of-building-instagram.html

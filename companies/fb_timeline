@@ -1,3 +1,20 @@
-https://www.facebook.com/note.php?note_id=10150468255628920
+# https://www.facebook.com/note.php?note_id=10150468255628920
 
-http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html
+# http://highscalability.com/blog/2012/1/23/facebook-timeline-brought-to-you-by-the-power-of-denormaliza.html
+MySQL
+Multifeed
+Thrift
+Memcached
+Operations
+
+# Denormalize Data:
+ create special purpose objects, instead of distributed rows that must be joined
+ Decides order of display by calculating a rank based on metadata
+ MySQL
+# Cache
+ Short term cache (recent activities) invalidated a lot
+   RAM row cache inside InnoDB with Flashcache
+ Long term cache
+   Memcached
+# Timeline operations locally on Aggregator
+ only data needs to be displayed is sent over the network
