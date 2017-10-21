@@ -1,11 +1,23 @@
 # 12/6/2011
 # http://highscalability.com/blog/2011/12/6/instagram-architecture-14-million-users-terabytes-of-photos.html
+ Amazon shop
+ Amazon’s Route53 for the DNS
+ 25 Django servers
+ PostgreSQL (users, photo metadata, tags, etc) runs on 12 Quadruple Extra-Large memory instances.
+ Several terabytes of photos are stored on Amazon S3.
+ 6 memcached instances for caching.
 
 # 4/9/2012
 # http://highscalability.com/blog/2012/4/9/the-instagram-architecture-facebook-bought-for-a-cool-billio.html
 
 # 4/16/2012
 # http://highscalability.com/blog/2012/4/16/instagram-architecture-update-whats-new-with-instagram.html
+ Sharding
+  One of the problems with sharding is when a shard gets bigger than a machine: made many thousand of logical shards that map to fewer physical nodes.
+  A logical shard to physical map is kept.
+  When a machine fills up then a logical shard can be moved to a new machine to relieve the pressure. The advantage is nothing needs to be resharded. Saved by a level of indirection.  
+  The schemas feature of PostgreSQL was very helpful, but I can’t tell exactly how from the slides.
+  Membase uses a similar approach.
 
 # 6/7/2012
 # http://highscalability.com/blog/2012/6/7/3-secrets-to-lightning-fast-mobile-design-at-instagram.html
@@ -14,9 +26,45 @@
 
 # 9/29/2014
 # http://highscalability.com/blog/2014/9/29/instagram-improved-their-apps-performance-heres-how.html
+ Flat design is the anti-skeuomorphism, going digital native, eschewing a slavish obsession with the appearance of reality, adopting simple elements, simple typography, flat colors, and simple designs.
+ Moving to a Flat Design
+ Fast cold start times are achievable.
+ Use pixels judiciously.
+ Mobile phones love simple designs and so do mobile developers.
+
+# 1/28/2015
+# http://highscalability.com/blog/2015/1/28/instagram-strategy-to-radically-reduce-traffic-kill-all-the.html
+ Remove fake users
+  18.9M (29%)
 
 # 7/16/2015
 # http://highscalability.com/blog/2015/7/16/this-just-this.html
 
 # 10/21/2015
 # http://highscalability.com/blog/2015/10/21/5-lessons-from-5-years-of-building-instagram.html
+ Do the simple thing first.
+ Do fewer things better.
+ Upfront work but can pay huge dividends.
+ Don’t reinvent the wheel.
+ Nothing lasts forever.
+
+# 3/1/2016
+# http://blog.gainlo.co/index.php/2016/03/01/system-design-interview-question-create-a-photo-sharing-app/
+ Data model: SQL + NoSQL
+  user table
+  user follow relation
+  picture table
+
+ Amazon Cloud S3 to serve photos
+
+ Scale issue:
+  Response time: top N most recent
+  picture fetching
+  ranking: something offline
+
+ Rank photos:
+
+ Image optimization:
+  Compression
+
+ Explore

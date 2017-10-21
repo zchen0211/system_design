@@ -1,3 +1,37 @@
+# 2/17/2016
+# http://blog.gainlo.co/index.php/2016/02/17/system-design-interview-question-how-to-design-twitter-part-1/
+ Define problem: MVP
+  1. Data Modeling
+  2. Server Feeds
+ Infinite scroll: recent top N
+ Detect Fake users:
+ How to rank feeds:
+  C (Affinity) * P(erformance) * T(ype) * R(ecency)
+ How to measure ranking:
+ @feature:
+  Include uid in the tweets
+ Retweet:
+
+# 2/24/2016
+# http://blog.gainlo.co/index.php/2016/02/24/system-design-interview-question-how-to-design-twitter-part-2/
+ # Trending Topics:
+  1. Get trending topics:
+    most frequent hashtags in last N hours
+  2. rank
+ # Who to follow:
+  1. within 2 - 3 steps;
+  2. Accounts with most followers;
+ # How to scale?
+ # How to evaluate?
+ # Moments: (more complated than trending topics)
+  1. Categorize each tweet/topic: news, sports, etc;
+   > pre-define, supervised learning;
+   > clustering
+  2. Generate and ranking trending topics at current moment C;
+  3. Generate and rank for each topic;
+ # Search
+  index, rank, retrieval
+
 # http://highscalability.com/blog/2016/4/20/how-twitter-handles-3000-images-per-second.html
 
 ### How Twitter Handles 3,000 Images Per Second
@@ -126,3 +160,4 @@ outliers will generate peaks in the number of requests that our application rece
 ### http://highscalability.com/blog/2011/12/19/how-twitter-stores-250-million-tweets-a-day-using-mysql.html
 How Twitter Stores 250 Million Tweets A Day Using MySQL
 https://github.com/twitter/mysql
+

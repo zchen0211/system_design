@@ -1,0 +1,28 @@
+# 5/24/2016
+# http://blog.gainlo.co/index.php/2016/05/24/design-a-recommendation-system/
+ 1. Collaborative Filtering:
+   r(u, i) = avr(r) + b_u + b_r + sum(d_ij r'_u'j) / sum(d_ij)
+ 2. Matrix Factorization:
+
+ 3. GBDT + LR
+
+ 4. MLP
+
+Feature Engineering:
+ Watch History
+ Search Token
+ Sex
+ Age
+ Freshness
+
+# Papers: 
+ The YouTube video recommendation system (RecSys'10)
+ Deep Neural Networks for YouTube Recommendations (RecSys'16)
+
+Measure:
+ Explicit: like / favorite / list / subscribe
+ Implicit: Watch time
+
+Infra:
+ Divide into offline / online parts:
+  offline: user model, video model
