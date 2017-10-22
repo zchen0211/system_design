@@ -1,0 +1,47 @@
+# 6/29/2016
+# http://blog.gainlo.co/index.php/2016/06/29/build-web-crawler/
+ 1. URL pool we want to crawl;
+ 2. For each URL, HTTP GET request;
+ 3. Parse content (HTTP), extract potential URL;
+ 4. Add new URLs to the pool and keep crawling;
+
+ robots.txt
+  ASCII text file, tell cralwer something should not be crawled
+
+ scale: 
+  URL updates (latest news):
+   every hour re-crawl (too frequent);
+   different frequency for different websites;
+  Dedup:
+   bloom-filter
+  Parse:
+   encode / decode;
+
+ challenge: 
+  detect loops: A -> B -> C -> A
+  DNS: own DNS server
+
+# web crawler
+# https://www.bittiger.io/videos/Y74hRcKTat82aJ5vr/TpxCSKrGpiKwuhP32
+  Network:
+   Application Layer: FTP, HTTP, DNS
+   Abstract Layer: Socket
+   Transport Layer: TCP, UDP
+   Network Layer: IP
+   Link Layer: Hardware Interface
+
+  Save in a table:
+   page_id, priority, type,               state, link, available Time
+   unique,  0-n,   page_sina/ifeng/..., done/working/new,
+
+# Multi-thread
+# https://www.bittiger.io/videos/aR2v6cezXGMwT442N/TpxCSKrGpiKwuhP32
+  while (true)
+    lock(taskTable)
+  1. sleep 1s;
+  2. cond_wait (conditional variable);
+  3. semaphore;
+
+# Distributed
+# https://www.bittiger.io/videos/9AzCHswk4GeABWzoJ/TpxCSKrGpiKwuhP302
+  Producer-Consumer Mode
