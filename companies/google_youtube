@@ -26,3 +26,32 @@ Measure:
 Infra:
  Divide into offline / online parts:
   offline: user model, video model
+
+# 10/22/2016
+# http://blog.gainlo.co/index.php/2016/10/22/design-youtube-part/
+ 1. storage and data model:
+   user table (profile, uid, email, regitration date, password, ...)
+   video meta table (title, length, size, description, ...)
+   author video table (data normalization)
+
+   videos and images (large static content)
+    serve separately
+    CDN (a globally distributed network of proxy servers deployed in multiple data centers)
+ 2. scalability:
+ 3. cache:
+   web server
+   video server 
+ 4. Long-tailed distribution:
+   Attract users (popular videos can be found somewhere else)
+
+# 11/4/2016
+# http://blog.gainlo.co/index.php/2016/11/04/design-youtube-part-ii/
+ 1. scale the database;
+   master / slave: single write master, multiple read
+ 2. Cache:
+   hard to cache the long-tailed ones
+ 3. Security:
+   too many requests (check IP)
+   hide IP?
+   ML: video with high view but low engagement is suspicious
+ 4. web server

@@ -1,0 +1,10 @@
+# 9/12/2016
+# http://blog.gainlo.co/index.php/2016/09/12/dropbox-interview-design-hit-counter/
+ 1. Problem: hit for past 1 min
+ 2. Store visitors with timestamp:
+   linked list
+ 3. Space optimization:
+   |last second| * 60 (approximate)
+ 4. Concurrency:
+   race condition
+ 5. Distribute the counter:

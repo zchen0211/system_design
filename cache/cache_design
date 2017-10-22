@@ -1,0 +1,18 @@
+# 5/17/2016
+# http://blog.gainlo.co/index.php/2016/05/17/design-a-cache-system/
+ 1. scenario:
+   DNS lookup,
+   webserver cache,
+ 2. LRU cache:
+   doubly-linked list
+   hash table with resource identifier
+ 3. Eviction policy:
+   Random
+   LRU
+   LFU
+ 4. Concurrency:
+   lock (performance issue)
+   mutiple shards: no need to worry if different shards
+   logs
+ 5. Distributed Cache:
+   Memcached

@@ -1,0 +1,19 @@
+# 3/8/2016
+# http://blog.gainlo.co/index.php/2016/03/08/system-design-interview-question-create-tinyurl-system/
+ 1. examples: goo.gl, bit.ly
+ 2. Two tables (hash):
+   short -> long
+   long -> short
+   [A-Z, a-z, 0-9]: 62 chars, 62 ^ 7 = 3500 billion
+ 3. Increment counter?
+   concurrency?
+   allow user to set?
+   hash function: map short url to an ID CRC32, SHA-1
+ 4. max URL length: 2083 char? 7 * 4 bytes + 2083 * 4 = 8.4 Kb
+   1 Million: 8.4 Gb
+ 5. Distributed?
+   Dynamo: Amazon's k-v store
+   tons of issues to consider:
+    replication
+    resharding
+    concurrency

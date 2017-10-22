@@ -1,0 +1,18 @@
+# 8/22/2016
+# http://blog.gainlo.co/index.php/2016/08/22/design-ecommerce-website-part/
+ 1. data model:
+   NoSQL (MongoDB: Good for a lot of different columns):
+    product: pid
+     book, publisher, author, ...
+     laptop, brand, ...
+   SQL:
+     user: uid,
+     order:
+ 2. concurrency
+
+# 8/28/2016
+# http://blog.gainlo.co/index.php/2016/08/28/design-ecommerce-website-part-ii/
+ 1. place lock (costly)
+ 2. Availability over Consistency:
+   Down for a while, very costly
+   Eventual consistency (good enough) 

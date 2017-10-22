@@ -1,0 +1,13 @@
+# 6/7/2016
+# http://blog.gainlo.co/index.php/2016/06/07/random-id-generator/
+ 1. scenario:
+   can't be arbitrarily long
+   incremented by date
+ 2. single machine (hard to scale)
+
+ 3. 3rd party service
+
+ 4. multi-machine solution:
+   server id + generated id
+
+ 5. clock synchronization  
