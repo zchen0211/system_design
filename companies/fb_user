@@ -1,0 +1,33 @@
+# user system I
+# https://www.bittiger.io/videos/NDA5xWwadTPqozcP6/TpxCSKrGpiKwuhP32
+ 1. scenario: register, update, remove (seldom) / login, logout (always)
+ 2. daily active: 2M x 1%
+    QPS, around 1 (< 100) don't care
+ 3. login (required for FB), 50%? generally 15%
+    2M x 50% x 1.2 time
+    QPS = 8.4 /s
+    peak QPS = 42?
+ 4. data model:
+    user table: id_, name, password, ...
+     insert, update, search
+
+# user system II
+# https://www.bittiger.io/videos/6ABMocj7vvTzKFxBy/TpxCSKrGpiKwuhP32
+ 1. auto-logout (10min)
+ 2. session, (stateless)
+   user class: put session in?
+    session_id
+ 3. a separate session table for login / logout
+   always update
+   user table (seldom)
+ 4. LookUp:
+   Hash: 1 query, O(1) time, O(n) space
+   B-Tree: range query, O(log n+k),
+
+# user system III
+# https://www.bittiger.io/videos/2JBxqRLDpi3FoE7LT/TpxCSKrGpiKwuhP32
+ membership
+  A tom
+  C onsistency
+  I solation
+  D urability

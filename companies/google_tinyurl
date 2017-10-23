@@ -17,3 +17,15 @@
     replication
     resharding
     concurrency
+
+# https://www.bittiger.io/videos/GdQaZh9sJqgJCZumC/TpxCSKrGpiKwuhP32
+ insert: 1M x 1% x 10 = 100,000
+   QPS: 1.2
+ Lookup: 1M x 100% x 3 = 3M
+   QPS: 35
+ Two tables
+ Follow-up:
+  random?
+  avoid conflict
+  expire state
+ Cache: LRU 

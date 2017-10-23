@@ -1,6 +1,9 @@
 # bit-tiger general intro
 # covers LinkedIn, FB
 https://www.bittiger.io/videos/2ECjWk4hG3NLrAA5o/TpxCSKrGpiKwuhP32
+ Method 1: bloom-filter + brute-force
+ Method 2: Trie
+ Cache
 
 # 50 min formal FB talk
 https://www.facebook.com/Engineering/videos/432864835468/
