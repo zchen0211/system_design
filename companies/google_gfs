@@ -1,0 +1,20 @@
+# The Google File System
+ SOSP 2003
+
+# https://www.bittiger.io/videos/QPQAy2DFkqLwHBS4K/qtFZHdaf6JJQxyMCB
+ 64 MBs 64 * 1,024 = 65,536 blocks
+ 1 Master + n * Chunk-Servers
+ Master saves meta:
+  chunk_id -> chunk_server
+  chunk server saves offset on its own
+ Replication x 3
+
+ Read:
+  1. App -> File NS, send filename chunk index;
+  2. File NS -> App, return chunk handle location;
+  3. App -> CS, Get from Linux File System;
+  4. CS -> App, return chunk;
+
+ Write:
+  1. Write to Master;
+  2. Replicate 3;

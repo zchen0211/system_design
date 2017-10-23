@@ -1,0 +1,27 @@
+# Bigtable: A Distributed Storage System for Structured Data
+ OSDI 2006
+
+# https://www.bittiger.io/videos/LPKACJnzovMKj8CB9/qtFZHdaf6JJQxyMCB
+ It is a k-v store.
+ 1. Meta-table:
+   Table0, LastKey0, Addr0;
+   Table1, LastKey1, Addr1;
+   Table2, LastKey2, Addr2;
+ 2. Table;
+ 3. SSTable (k-v pairs);
+   a, sangpo;
+   c, flyer;
+
+ To accelerate:
+   data + index
+   bloom-filter
+
+ Write into memTable (in-memory) to accelerate
+
+ Inside GFS chunk:
+  SSTable, sorted k-v pairs,
+  index,
+  bloom-filter
+
+ Big Table uses a lot of memory;
+ GFS uses hard-disk.

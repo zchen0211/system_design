@@ -1,0 +1,10 @@
+# MapReduce: Simplified Data Processing on Large Clusters
+ OSDI 2004
+
+# https://www.bittiger.io/videos/nFt6rHJiJedmuzpem/qtFZHdaf6JJQxyMCB
+ Input
+ Split task (Server / Coordinator)
+ Map
+  Shuffle (save in some data format)
+ Reduce
+  Finalize (save in some data format)
