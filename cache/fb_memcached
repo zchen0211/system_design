@@ -1,6 +1,18 @@
 # Good Article
 https://www.facebook.com/notes/facebook-engineering/scaling-memcached-at-facebook/39391378919/
 
+# Scaling Memcache at Facebook
+NSDI 2013
+ heavy read
+ geographically distributed
+
+ k-v store
+ LRU with eviction
+ Database update: invalidate the Memcached
+ Look-aside Cache v.s. Cache on DB (FB's choice)
+ Writes in non-master
+  Race between DB replication and subsequent DB read
+
 # Caching
   # .html, MySQL Query Cache, memcached, ...
   # simple key-value store, reside as a buffering layer between application and data layer

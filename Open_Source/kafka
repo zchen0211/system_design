@@ -1,0 +1,6 @@
+# Kafka: a Distributed Messaging System for Log Processing
+ NSDI 2011
+ LinkedIn
+
+ Producer -> Kafka -> Consumer
+ Use log and message-queue to solve problem?

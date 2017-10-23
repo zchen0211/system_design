@@ -1,0 +1,9 @@
+# https://www.bittiger.io/videos/N3P5qpZwNphkTfjnE/TTbQCvqEyQsMJ9wjb
+ Hadoop 1.0
+  NS (Namespace)
+  block storage (data node), 3 x 64 MB
+
+ Hadoop 2.o
+  YARN
+
+  Spark on Yarn

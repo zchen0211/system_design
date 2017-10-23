@@ -1,0 +1,21 @@
+# https://www.bittiger.io/videos/Rg2oTcY8totL3S2FX/qtFZHdaf6JJQxyMCB
+
+# https://www.bittiger.io/videos/d8hva54gPra9EnSRE/TTbQCvqEyQsMJ9wjb
+
+ 1. Query Understand
+   Remove top words, stemming, tokenize, rewrite query, category
+ 2. Select Ads from Ads store
+   Inverted Indexing: nike -> 1231, ...
+   Feature Val: CTR, Impression,
+   Term Similarity (tf-idf, BM25)
+ 3. Filter Ads
+   Unrelevant, price too low
+ 4. Rank Ads
+   Query score * bid
+   Quality Score = .75 * pClick + .25 * relevance
+ 5. Select Top K
+
+ Quality * Pricing -> Allocate Ads
+
+ Cache,
+ Personalized?
