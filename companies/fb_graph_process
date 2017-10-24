@@ -1,0 +1,10 @@
+# One Trillion Edges: Graph Processing at Facebook-Scale
+ VLDB 2015
+
+ Apache Giraph (open source, FB-scale)
+
+ Architect:
+  Giraph, Hive MR
+  HiveIO, YARN, MapReduce
+  Hive Tables
+  HDFS

@@ -1,0 +1,34 @@
+# Realtime Data Processing at Facebook
+ SIGMOD 2016
+
+ Twitter (Storm, Heron)
+ Google (Millwheel)
+ LinkedIn (Samza)
+
+ Facebook (Puma, Swift, Stylus)
+
+ Chorus: data pipeline to construct aggregated voice at FB
+ Mobile analytics:
+ Page insights pipeline: realtime info likes, reach, ...
+ Realtime streaming: CPU-intensive,
+
+ Latency: sec, not millisecond
+
+ Login / ... -> 
+ Scribe (persistent distributed messaging sys, sec latency, high throughput, storing in HDFS)
+  PUMA (streaming sys, SQL written in JAVA, Thrift API)
+  Swift (basic streaming sys, checkpointing, low-throughput, Python)
+  Stylus (low-level streaming sys, C++, stateless or stateful, DAG)
+  Laser (High query throughput, k-v store)
+  Scuba (Slice-and-Dice Analysis Store)
+  Hive data warehouse
+
+ Example: trending events
+  scribe -> Filter
+  scribe -> Joiner (RPC Lookup)
+  scribe -> Scorer
+
+ Choices:
+  Declarative (SQL)
+  Functional
+  Procedural (C++, Java, Python), examples: S4, Storm, Heron, Samza
