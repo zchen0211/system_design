@@ -2,5 +2,16 @@
  NSDI 2011
  LinkedIn
 
+# http://notes.stephenholiday.com/Kafka.pdf
+ Kafka: a Distributed Messaging System for Log Processing
+  NetDB 2011
+
+ Kafka as a broker between Producer and consumer
+
  Producer -> Kafka -> Consumer
+ Scalability: partition, replication:w
+
+ Ordered persistent
  Use log and message-queue to solve problem?
+ Sequential Access = high performance
+

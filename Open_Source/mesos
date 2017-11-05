@@ -3,3 +3,22 @@
 Mesos: A Platform for Fine-Grained Resource Sharing in the Data Center
  Berkeley AMP
  NSDI 2011
+
+ Alternative: Borg, Omega
+
+ Stellar, with Mesos Master as center, connects to:
+  Hadoop scheduler, MPI scheduler
+  Zookeeper
+  Mesos Slave
+
+ CPU    |  k-v pairs
+ Memory |  rack
+ Disk   |  zone: east/west
+ Ports  |  os: centos
+
+ Two-level Scheduling:
+  Frameork -> Allocation Module (Mesos Master) -> Slave Executor
+
+ DRF (Dominant Resource Fairness)
+ Compare with YARN (monolithic scheduling)
+              Kubernetes (monolithic, container orchestration only)
