@@ -8,3 +8,12 @@
   HiveIO, YARN, MapReduce
   Hive Tables
   HDFS
+
+# Compressing Graphs and Indexes with Recursive Graph Bisection
+ KDD 2016
+ 
+ Reorder node -> compression-friendly
+ NP Hard
+ Approximate:
+  Query
+  Bisection
