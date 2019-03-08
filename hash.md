@@ -7,7 +7,7 @@ ACM STOC 1997
 	- used in Amazon Dynamo, memcached, Parameter Server
 
 ## Algorithm:
-	- n machines load balacing:
+	- n machines, load balacing:
 	- hash(O) % n
 	- Clockwise -> Next One
 	- Duplicate with multiple-object
@@ -17,9 +17,9 @@ ACM STOC 1997
 
 ## Distributed Hash Table (DHT)
 - Another Good Article: http://www.cnblogs.com/hapjin/p/5760463.html
-Chord Basic Lookup
-If not in server, clockwise
-Finger Table to improve performance
+	- Chord Basic Lookup
+	- If not in server, clockwise
+	- Finger Table to improve performance
 
 i   id+2^i    succ  
 0   1+2^0=2    2  
