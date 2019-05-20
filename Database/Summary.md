@@ -1,0 +1,145 @@
+# Summary
+
+## Cassandra
+- http://cassandra.apache.org/
+- NoSQL
+- Used in Constant Contact, CERN, Comcast, eBay, GitHub, GoDaddy, Hulu, Instagram, Intuit, Netflix, Reddit, The Weather Channel, and over 1500 more companies
+- Bit Tiger
+	- https://www.bittiger.io/videos/jPnJ7g3f28eG58rRc/TTbQCvqEyQsMJ9wjb
+ 	- Load Balance
+ 	- Consistency Hashing (Virtual Node)
+ 	- Fault Tolerance: Replication
+	- Performance: outperforms other NoSQL alternatives
+	- Decentralized: no SPoF, every node is identical
+	- Scalable:
+
+## TAO: Facebook's Distributed Data Store for the Social Graph
+- USENIX ATC 2013
+- mysql
+- object: user, object, ...
+- association: edge
+- eventual consistency
+- scaling geographically
+
+## NoSQL
+- NoSQL = Not Only SQL
+- http://horicky.blogspot.com/2009/11/nosql-patterns.html
+- http://www.runoob.com/mongodb/nosql.html
+- http://blog.sina.com.cn/s/blog_3fe961ae010139u6.html
+- http://www.cnblogs.com/duanxz/p/5229364.html
+- http://www.infoq.com/cn/articles/nosql-dynamo
+- http://reader.roodo.com/develop/archives/14702009.html
+- http://www.uml.org.cn/course-db/NoSQL.asp
+- Widely used in:
+	- Google BigTable, HBase, Hypertable
+	- Amazon Dynamo, Voldemort, Cassendra, Riak
+	- Redis
+	- CouchDB, MongoDB
+	- Facebook
+	- Mozilla, Adobe, Foursquare, LinkedIn, Digg...
+- NoSQL pattern
+	- MongoDB (Document)
+	- CouchDB (Document)
+	- Apache Cassandra (Wide Column Store)
+	- Redis (K-V), data-structure server
+	- Relational Database,
+- Characteristics:
+	- Key value store
+	- Run on large number of commodity machines
+	- Data are partitioned and replicated among these machines
+	- Relax the data consistency requirement. (because the CAP theorem proves that you cannot get Consistency, Availability and Partitioning at the the same time)
+- **CAP Theorem**: in a distributed data store, it is impossible to provide more than two of the following: Consistency, Availability and Partition tolerance
+	- Consistency: Every read receives the most recent write or an error
+	- Availability: Every request receives a (non-error) response – without guarantee that it contains the most recent write
+	- Partition tolerance: The system continues to operate despite an arbitrary number of messages being dropped (or delayed) by the network between nodes
+- API model
+	- basic form: get(key), put(key, value), delete(key)
+	- advanced:
+	- execute(key, operation, parameters)
+	- mapreduce(keyList, mapFunc, reduceFunc): Invoke a map/reduce function across a key range.
+- Machines layout
+	- physical node (PN): cheap, commoditized, unreliable machines
+- Data partitioning (Consistent Hashing)
+- Data replication
+	- reliability
+	- spreading workflow
+- Client Consistency
+- Master Slave (or Single Master) Model
+	- Master Slave model works very well in general when the application has a high read/write ratio. It also works very well when the update happens evenly in the key range. So it is the predominant model of data replication.
+- Multi-Master (or No Master) Model
+	- If there is hot spots in certain key range, and there is intensive write request, the master slave model will be unable to spread the workload evenly. Multi-master model allows updates to happen at any replica (I think call it "No-Master" is more accurate).
+- Vector Clock
+- Gossip (State Transfer Model)
+- Gossip (Operation Transfer Model)
+- Map Reduce Execution
+- BASE：Basically Available, Soft-state, Eventually Consistent
+	- Atomicity | Basically Available
+	- Consistency | Soft state
+	- Isolation | Eventual consistency
+	- Durable
+- Classification
+	- Column: Hbase, Cassandra, Hypertable
+ 		- good for structured and semi-, easy to lookup for some columns
+	- Text: MongoDB, CouchDB
+		- Json, can build index
+	- K-V: Tokyo Cabinet / Tyrant, Berkeley DB, MemcacheDB, Redis
+		- fast get value from key
+	- Graph: Neo4J, FlockDB
+		- Traditional RDMBS can't do
+	- Object: db4o, Versant
+		- Like OOD, save / load 
+	- XML: Berkeley DB XML, BaseX
+		- Save in XML, support XML-lookup
+
+## SQL
+- A complete tutorial (Stanford Courses) http://web.stanford.edu/class/cs145/
+- http://blog.jobbole.com/100349/
+- http://snarfed.org/transactions_across_datacenters_io.html
+- http://webscalesql.org/
+- https://github.com/webscalesql/webscalesql-5.6
+- Transactions Across Datacenters
+- Commonly techniques
+	- B+ Tree Index: insert / delete (O(logn))
+	- Hash Table:
+- Cores:
+	- Process Manager
+	- Network Manager
+	- File System Manager
+	- Memory Manager
+	- Security Manager
+	- Client Manager
+- Relational Database (RDMBS)
+- **ACID**
+	- A Atomicity
+	- C Consitency
+	- I Isolation
+	- D Durability
+- RDBMS
+	- highly structured
+	- SQL
+	- data and relation saved in tables
+	- data manipulates and defines languages
+	- strong consistency
+- NoSQL
+	- No declarative language
+	- No predifined mode
+	- K-V / column / row / text / image saving;
+	- eventual consistency
+	- non-structured, no predictable
+	- CAP theorem
+	- high-performance, availability and extensibility flexible, semi-structured
+	- no standarized
+	- limited lookup ability
+	- not very direct program
+- Entities
+- Relationships
+- A **data model** is a collection of concepts for describing data
+- A **schema** is a description of a paracular collecaon of data, using the given data model
+- Transactions:
+	- transaction (TXN): reads/writes
+	- scheduling concurrent transactions: A set of TXNs is isolated if their effect is as if all were executed serially
+- Conflicts: 
+	- If Ti wants to write to an item x and Tj wants to read x, then Ti, Tj conflict. Solution via locking:
+    - only one winner gets the lock
+    - loser is blocked (waits) unal winner finishes
+- Ensuring Atomicity & Durability

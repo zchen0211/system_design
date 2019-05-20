@@ -1,7 +1,0 @@
-# TAO: Facebook's Distributed Data Store for the Social Graph
- USENIX ATC 2013
-  mysql
-  object: user, object, ...
-  association: edge
-  eventual consistency
-  scaling geographically
